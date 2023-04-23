@@ -5,6 +5,19 @@ let btn_reset=document.createElement('button');
 let msg=document.createElement('p');
 
 msg.innerHTML="Please click on image to verify you are not robot";
+msg.style.cssText=`
+font-size:33px;
+font-family:sans-serif;
+font-weight:500;
+letter-spacing:0.4px;
+background-color:cyan;
+color:red;
+display:row;
+background-clip:content-box;
+border-radius:44px;
+width:50%;
+margin-left:25%;
+`
 ImagesList.push(randomimage);
 let randomImage=[];
 var keys=1;
@@ -19,7 +32,25 @@ while(k<ImagesList.length){
 }
 let id_store=new Map();
 btn_reset.innerText="Reset";
+btn_reset.style.cssText=`
+width:20vw;height:20vh;background-image:linear-gradient(to right, rgb(96, 187, 204),rgb(123, 57, 142));
+border-radius:44px;
+color:rgb(102, 64, 1);
+box-shadow:12px 12px 1px -2px red;
+font-size:30px;
+font-weight:500;
+font-family:cursive;
+`
 let verify=document.createElement('button');
+verify.style.cssText=`
+width:20vw;height:20vh;background-image:linear-gradient(to right, rgb(96, 187, 204),rgb(123, 57, 142));
+border-radius:44px;
+color:rgb(102, 64, 1);
+box-shadow:12px 12px 1px -2px red;
+font-size:30px;
+font-weight:500;
+font-family:cursive;
+`
 verify.innerText="Verify";
 function robot(event){
     let para = document.querySelector('p');
@@ -54,6 +85,9 @@ function robot(event){
 }  
 }
     }
+    else{
+        alert('Select Max Two images');
+    }
 }
 
 
@@ -87,6 +121,7 @@ function verified(){
     }
     if(match==true){
     alert('Congrulations,You are Human Succesfully verified');
+    window.location.reload();
     }
     else{
     let response =confirm('You are not Human , Would you like to try again click ok button');
